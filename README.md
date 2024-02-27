@@ -15,11 +15,11 @@ git clone https://github.com/tolbarroso/JogoDaVelha.git
 
 
 2. Compile os arquivos Java:
-javac Servidor.java JogoDaVelha.java
+java `Servidor.java` `JogoDaVelha.java`
 
 
 3. Inicie o servidor:
-java Servidor
+java `Servidor`
 
 
 4. Os jogadores devem se conectar ao servidor utilizando um cliente que suporte sockets (por exemplo, um cliente Java).
