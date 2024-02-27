@@ -1,5 +1,8 @@
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 public class JogoDaVelha {
     private Socket jogador1;
@@ -64,7 +67,7 @@ public class JogoDaVelha {
                 return true;
             }
         }
-    
+
         for (int coluna = 0; coluna < 3; coluna++) {
             if (tabuleiro[0][coluna] == tabuleiro[1][coluna] && 
                 tabuleiro[1][coluna] == tabuleiro[2][coluna] && 
@@ -73,16 +76,16 @@ public class JogoDaVelha {
                 return true;
             }
         }
-    
+
         if ((tabuleiro[0][0] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][2] && tabuleiro[0][0] != '\0') ||
             (tabuleiro[0][2] == tabuleiro[1][1] && tabuleiro[1][1] == tabuleiro[2][0] && tabuleiro[0][2] != '\0')) {
             jogoEmAndamento = false;
             return true;
         }
-    
+
         return false;
     }
-    
+
     private boolean verificarEmpate() {
         for (int linha = 0; linha < 3; linha++) {
             for (int coluna = 0; coluna < 3; coluna++) {
@@ -91,7 +94,7 @@ public class JogoDaVelha {
                 }
             }
         }
-    
+
         jogoEmAndamento = false;
         return true;
     }
